@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FiThumbsDown, FiThumbsUp } from "react-icons/fi";
+import FallbackImg from "../assets/images/fallback.jpg";
 
 export default function Card({ result }) {
   const imageUrl = result.backdrop_path || result.poster_path ? (
@@ -8,7 +9,7 @@ export default function Card({ result }) {
       result.backdrop_path || result.poster_path
     }`
   ) : (
-    "../../public/images/fallback.jpg"
+    FallbackImg
   );
 
   const getRatingColor = (rating) => {

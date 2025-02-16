@@ -1,6 +1,7 @@
 import AddToFav from "@/components/AddToFav";
 import Image from "next/image";
 import Link from "next/link";
+import FallbackImg  from "../../../assets/images/fallback.jpg";
 
 export default async function MediaPage({ params }) {
   const { id: mediaId } = await params;
@@ -30,7 +31,7 @@ export default async function MediaPage({ params }) {
       media.backdrop_path || media.poster_path
     }`
   ) : (
-    "../../../../public/images/fallback.jpg"
+    FallbackImg
   );
 
   return (
